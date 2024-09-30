@@ -1,0 +1,151 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3e5f5; /* Light purple background */
+    margin: 0;
+}
+
+.todo-container {
+    background: white;
+    padding: 30px; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Increased width */
+    border: 2px solid #ba68c8; /* Light purple border */
+}
+
+h1 {
+    color: #6a1b9a; /* Dark purple */
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 12px; /* Increased padding */
+    margin-bottom: 10px;
+    border: 2px solid #ba68c8; /* Light purple */
+    border-radius: 4px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    background-color: #8e24aa; /* Medium purple */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+}
+
+    button:hover {
+        background-color: #6a1b9a; /* Dark purple */
+    }
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    transition: transform 0.2s ease;
+}
+
+    #todo-list li {
+        display: flex;
+        align-items: center;
+        padding: 12px; /* Increased padding */
+        margin: 5px 0;
+        background: #e1bee7; /* Light purple */
+        border-radius: 4px;
+        cursor: grab;
+        transition: transform 0.2s ease; /* Smooth transition */
+    }
+
+        #todo-list li.completed .todo-text {
+            text-decoration: line-through;
+            color: #a0a0a0;
+        }
+
+        #todo-list li .delete-btn {
+            margin-left: auto;
+            background: #404040; /* Red */
+            color: white;
+            border: none;
+            padding: 6px; /* Increased padding */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px; /* Increased font size */
+            width: 70px; /* Increased width */
+            text-align: center;
+        }
+
+            #todo-list li .delete-btn:hover {
+                background: #b71c1c; /* Dark red */
+            }
+
+.dragging {
+    opacity: 0.5; /* Зменшуємо непрозорість */
+    cursor: grab;
+    background-color: #f0f0f0; /* Змінюємо фон */
+    border: 2px dashed #8e24aa; /* Додаємо рамку */
+    position: relative; /* Встановлюємо відносне позиціонування */
+    z-index: 1000; /* Піднімаємо над іншими елементами */
+    transform: scale(1.05); /* Збільшуємо розмір для акценту */
+}
+
+.todo-checkbox {
+    margin-right: 10px;
+    accent-color: #8e24aa; /* Medium purple */
+}
+
+.hovered {
+    background-color: #e0e0e0; /* Змінює фон для підсвічування */
+}
+
+#todo-list li[draggable="true"] {
+    user-select: none;
+}
+
+    #todo-list li[draggable="true"]:hover {
+        background: #d1c4e9; /* Slightly darker purple */
+    }
+
+    #todo-list li[draggable="true"]:active {
+        background: #b39ddb; /* Even darker purple */
+    }
+
+/* Додайте цей CSS код до вашого файлу стилів */
+
+.todo-list li.dragging {
+    opacity: 0.5;
+}
+
+.todo-list li.hovered {
+    background-color: #f0f0f0;
+}
+
+.todo-list li {
+    transition: background-color 0.3s, border 0.3s;
+}
+
+    .todo-list li .todo-checkbox {
+        margin-right: 10px;
+    }
+
+    .todo-list li .delete-btn {
+        margin-left: 10px;
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+        .todo-list li .delete-btn:hover {
+            background-color: #ff1a1a;
+        }
+
